@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.link-button, .link-button:hover, .link-button:focus {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
