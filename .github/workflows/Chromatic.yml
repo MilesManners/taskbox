@@ -1,0 +1,19 @@
+name: Chromatic
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        yarn && yarn build
+    - uses: chromaui/action@v1
+      with: 
+        token: ${{ secrets.GITHUB_TOKEN }}
+        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
